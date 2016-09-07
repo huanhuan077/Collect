@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.extend demo</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<div id="log"></div>
+ 
+<script>
+var object1 = {
+  apple:0,
+  banana: { price: 100,width: 20},
+  durian: 200
+};
+var object2 = {
+  banana: { price: 200 },
+  durian: 100,
+  height: 100
+};
+ 
+// Merge object2 into object1
+// $.extend( object1, object2 );    
+// $.extend( true, object1, object2);	
+var object = $.extend( {}, object1, object2);	//object1 是没有被改变的，被改变的是object
+ 
+// Assuming JSON.stringify - not available in IE<8
+$( "#log" ).append( JSON.stringify( object1 ) );
+</script>
+ 
+</body>
+</html>

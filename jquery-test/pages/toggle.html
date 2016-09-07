@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+
+	</style>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+	<div >
+	<span class="toggles">事件二</span>
+	<span class="toggles">事件二</span>
+</div>
+<button class="btn1">Button #1</button>
+<button class="btn2">Button #2</button>
+<div><span class="count-1">0</span> button #1 clicks.</div>
+ 
+<div><span class="count-2">0</span> button #2 clicks.</div>
+
+</body>
+
+<script type="text/javascript">
+	 //.toggle()多个事件来回切换
+
+$(".toggles").toggle(
+function(){
+	$(this).css({"color":"red","display":"block"});
+	// alert("第二种情况");
+},
+function(){
+	$(this).css({"color":"yellow","display":"block"});
+	// alert("第yi种情况");
+}
+	);
+
+//.trigger
+$(".btn1").click(function(){
+	update($(".count-1"));
+})
+$(".btn2").click(function(){
+	$(".btn1").trigger("click");
+	update($(".count-2"));
+})
+function update(t){
+	var n = parseInt(t.text(),10);
+	t.text(n + 1);
+}
+</script>
+</html>

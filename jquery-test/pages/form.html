@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jquery.change demo</title>
+  <style>
+  div { color:red; }
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+<input type="text" name="" class="select target">
+  <select name="sweets" multiple="multiple" class="select">
+    <option>Chocolate</option>
+    <option selected="selected">Candy</option>
+ 
+    <option>Taffy</option>
+    <option selected="selected">Caramel</option>
+    <option>Fudge</option>
+    <option>Cookie</option>
+ 
+  </select>
+  <div></div>
+  <div class="other">other</div>
+
+  <form action="">
+  	<input type="text" name="" class="focus-on"><span></span>
+  </form>
+<script>
+// $(".select").change(function(){
+// 	alert("handler for .change() called");
+// })
+
+
+$("select").change(function () {
+  var str = "";
+  $("select option:selected").each(function () {
+            str += $(this).text() + " ";
+  });
+  $("div:first").text(str);
+}).change();
+
+//.focus
+$(".focus-on").focus(function(){
+	$(this).siblings().text("focus on").fadeToggle(1000);
+})
+</script>
+ 
+</body>
+</html>

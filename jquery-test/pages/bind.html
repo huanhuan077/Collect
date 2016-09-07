@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <style>
+p { color:red; }
+span { color:blue; }
+</style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+<div class="wrap">
+	wrap
+	<span>propagation</span>
+	<span>target</span>
+</div>
+  <p>Has an attached custom event.</p>
+  <div class="text1">hello world !</div>
+<button>Trigger custom event</button>
+<button type="submit" class="submit"> submit</button>
+<span style="display:none;"></span>
+<div class="toggle">
+事件二
+</div>
+<script>
+//阻止事件冒泡
+ $(".wrap").bind("click",function(e){
+ 		// e.preventDefault();
+ 		console.log("test");
+ })
+$(".wrap span").click(function(e){
+	console.log($(e.target).text());
+	e.stopPropagation();
+})
+
+//bind绑定单个事件
+$("p").bind("myCustomEvent", function(e, myName, myValue){
+$(this).text(myName + ", hi there!");
+$("span").stop().css("opacity", 1)
+.text("myName = " + myName)
+.fadeIn(30).fadeOut(1000);
+});
+$("button:first").click(function () {
+$("p").trigger("myCustomEvent", [ "John" ]);
+});
+
+ //获取event.data数据
+ $("p").on("click",{name:"xh",age:12},function(event){
+    $(this).text(event.data.name);
+})
+
+ //.one()绑定一次后，立即解除
+ $(".text1").one("click",function(){
+ 	$(this).css("color","red");
+ 	alert("只执行一次！");
+ })
+
+//.resize()窗口缩放
+ $(window).resize(function(){
+   $("body").prepend("<div>"+ $(window).width()+"</div>")
+})
+
+
+</script>
+ 
+</body>
+</html>
