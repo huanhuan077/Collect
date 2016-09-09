@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery wrapInner demo</title>
+	<style type="text/css">
+		.red{
+			color: red;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<span class="text">包裹在里面</span>
+	</div>
+
+	<span class="text2">child</span>
+	<span class="text2">child</span>
+</body>
+<script type="text/javascript">
+	$(".text").wrapInner("<a href='#'>"+"</a>");
+	$(".wrap").wrapInner("<div class='red'>"+"</div>")
+
+	$(".text2").wrapAll($(".text"));
+</script>
+</html>
