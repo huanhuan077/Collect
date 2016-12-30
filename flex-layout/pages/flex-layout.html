@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>flex布局</title>
+    <link rel="stylesheet" type="text/css" href="../flex.css">
+</head>
+
+<body>
+
+    <h4>1、主轴水平排列</h4>
+    <div class="demo row">
+        <div class="block-1">1</div>
+        <div class="block-3">2</div>
+        <div class="block-4">3</div>
+        <div class="block-5">4</div>
+    </div>
+    <h4>2、主轴水平反转</h4>
+    <div class="demo row-reverse">
+        <div class="block-1">1、
+            <p>放大、缩小</p>
+            auto(1 1 auto)</div>
+        <div class="block-2">2、
+            <span>40%</span>
+        </div>
+        <div class="block-4">
+            3、 30%</div>
+        <div class="block-5">4、
+            <p>不放大、不缩小</p>
+            none(0 0 auto)
+        </div>
+    </div>
+    <h4>3、主轴垂直、垂直反转排列</h4>
+    <div class="demo">
+        <div class="demo column">
+            <div class="block-1 left" flex-box="0">1、垂直排列</div>
+            <div class="block-2 " flex-box="1">2、</div>
+            <div class="block-3 right" flex-box='0'>3、</div>
+        </div>
+        <div class="demo column-reverse">
+            <div class="block-1">1、垂直反转</div>
+            <div class="block-2">2、</div>
+        </div>
+        <div class="demo text">
+        	<span class="block-1">文字居中文字居中</span>
+        </div>
+    </div>
+    <h4>4、不换行---nowrap</h4>
+    <div class="demo row1">
+        <div class="block-1">1</div>
+        <div class="block-3">2</div>
+        <div class="block-4">3</div>
+        <div class="block-5">4</div>
+    </div>
+    <h4>4、子项在主轴、交叉轴上对齐方式</h4>
+    <div class="demo justify">
+        <div class="block-1">1</div>
+        <div class="block-3">2</div>
+        <div class="block-4">3</div>
+        <div class="block-5">4</div>
+    </div>
+    <div class="demo justify items">
+        <div class="block-1">1xyz</div>
+        <div class="block-3">2基线</div>
+        <div class="block-4">3flex</div>
+        <div class="block-5" style="font-size: 30px;">4对齐</div>
+    </div>
+    <h4>1、子项排列顺序 order</h4>
+    <div class="demo row order">
+        <div class="block-1">1</div>
+        <div class="block-3">2</div>
+        <div class="block-4">3</div>
+        <div class="block-5">4</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 20px;
+}
+
+h4 {
+    margin: 20px 0;
+}
+
+.demo {
+    margin: 10px 0;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.demo {
+    div {
+        text-align: center;
+        padding: 10px;
+        font-size: 20px;
+    }
+}
+
+.row {
+    flex-flow: row nowrap;
+    div {
+        flex: 1;
+    }
+}
+
+.row1 {
+    width: 300px;
+    overflow: hidden;
+    div {
+        flex: 0 0 30%;
+    }
+}
+
+.justify {
+    height: 100px;
+    background: #ccc;
+    justify-content: space-between;
+    div {
+        height: 40px;
+    }
+}
+
+.items {
+    justify-content: space-around;
+    align-items: baseline;
+    div {
+        height: auto;
+    }
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+    .block-1 {
+        flex: auto;
+    }
+    .block-2 {
+        flex: 0 1 40%;
+    }
+    .block-4 {
+        flex: 0 1 30%;
+    }
+    .block-5 {
+        flex: none;
+    }
+}
+
+.order {
+    .block-1 {
+        order: 3;
+    }
+    .block-3 {
+        order: 1;
+    }
+    .block-4 {
+        order: 0;
+    }
+    .block-5 {
+        order: 4;
+    }
+}
+
+.column {
+    flex-direction: column;
+}
+
+.column-reverse {
+    flex-direction: column-reverse;
+}
+
+.block-1 {
+    background: #CCCCFF;
+}
+
+.block-2 {
+    background: #99CC99;
+}
+
+.block-3 {
+    background: #FF6666;
+}
+
+.block-4 {
+    background: #FFCCCC;
+}
+
+.block-5 {
+    background: #CCFF66;
+}
+
+.text{
+	width: 100px;
+	align-items: center;
+	background: #ddd;
+}
